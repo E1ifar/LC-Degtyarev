@@ -10,7 +10,7 @@ d=a;
 while d>0:
     print(cifr(d));
     s=sum(n);
-    i=i+1
+    i=i+1;
     d=d-s;
     n.clear();
     print(d);
