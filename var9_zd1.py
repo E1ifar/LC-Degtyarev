@@ -1,6 +1,6 @@
 n=[];
 def cifr(a):
-    while a>1:
+    while a>0:
         n.append(a%10);
         a=a//10;
     return n;
