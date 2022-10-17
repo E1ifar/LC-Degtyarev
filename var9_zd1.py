@@ -8,7 +8,7 @@ a=int(input("Введите число: "));
 i=0;
 d=a;
 while d>0:
-    print(cifr(d));
+    cifr(d);
     s=sum(n);
     i=i+1;
     d=d-s;
