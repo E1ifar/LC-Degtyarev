@@ -13,8 +13,8 @@ def su(g):
     for i in g:
         su=su+i
     return su
-print(m1)
-print(pr(m1), su(m1), end="   ")
-print(pr(m2), su(m2), end="   ")
-print(pr(m3), su(m3), end="   ")
+print(m1, m2, m3, end='\n')
+print(pr(m1), su(m1), end='\n')
+print(pr(m2), su(m2), end='\n')
+print(pr(m3), su(m3), end='\n')
 
