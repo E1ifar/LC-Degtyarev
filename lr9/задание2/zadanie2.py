@@ -4,7 +4,7 @@ n=int(input("Введите значение квадратной матрицы
 with open('lr9\задание2\Degtyarev_vvod2.txt', 'r') as file: #получение данных из файла
     mas1 = []
     for mas1_line in file.readlines():
-        line = mas1_line.split()
+        line = mas1_line.split(' ')
         mas1 += line
     mas1 = list(map(int, mas1))
 
