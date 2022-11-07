@@ -36,8 +36,8 @@ for i in range(len(mas)): #нахождение чисел кратных k
                 l+=1
 print("Кол-во чисел кратных k: %s" %l)
 
-file2 = open('lr9\задание1\Degtyarev_vivod1.txt', 'w')
-for i in range(n): #Вывод массива
+file2 = open('lr9\задание1\Degtyarev_vivod1.txt', 'w') #запись массива в файл
+for i in range(n):
     for j in range(n):
         a = str(mas[i][j])
         file2.write(a)
