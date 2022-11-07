@@ -35,3 +35,11 @@ for i in range(len(mas)): #нахождение чисел кратных k
             if mas[i][j]%k==0:
                 l+=1
 print("Кол-во чисел кратных k: %s" %l)
+
+file2 = open('lr9\задание1\Degtyarev_vivod1.txt', 'w')
+for i in range(n): #Вывод массива
+    for j in range(n):
+        a = str(mas[i][j])
+        file2.write(a)
+        file2.write(' ')
+file2.close()
