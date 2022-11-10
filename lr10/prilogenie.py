@@ -65,7 +65,9 @@ def clicked():
         mb.showinfo('Информация', 'Вы выбрали второй вариант ответа!')
     c=chk_state3.get()
     if c == True:
-        mb.showinfo('Информация', 'Вы выбрали третий вариант ответа!')   
+        mb.showinfo('Информация', 'Вы выбрали третий вариант ответа!')
+    if a != True and b != True and c!= True:
+        mb.showwarning('Предупреждение', ' Вы не выбрали ни один вариант ответа!!!')   
 
 chk_state1 = BooleanVar()
 chk_state1.set(0) 
