@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter.ttk import Checkbutton
 import tkinter.messagebox as mb
 from tkinter.ttk import Combobox
-
+from tkinter import filedialog
 
 window = Tk()
 window.title("Дегтярев Антон Николаевич Уб-21")
@@ -30,8 +30,11 @@ def vichisleniya():
         l=b*c
         lbl.configure(text=l)
     elif a== '/':
-        l=b/c
-        lbl.configure(text=l)
+        if c==0:
+            mb.showerror('Предупреждение', 'На ноль делить нельзя!')
+        else:        
+            l=b/c
+            lbl.configure(text=l)
 
 txt1 = Entry(tab1, justify=CENTER,  font=("Times New Romane", 30))
 txt1.place(x = 10, y = 10, width=100, height=50,)
@@ -87,10 +90,12 @@ btn.grid(column=5, row=0)
 
 #третья вкладка
 def clicked():
-    with open('lr10\текст.txt', 'r') as file: #получение данных из файла
-    for mas in file.readlines():
-        print (mas)
-    mas1 = list(map(int, mas1))
+    filepath = filedialog.askopenfilename()
+    if filepath != "":
+        with open(filepath, "r", encoding="UTF-8") as file:
+            text =file.read()
+            txt11.delete("1.0", END)
+            txt11.insert("1.0", text)
 
 tab3 = ttk.Frame(tab_control)
 tab_control.add(tab3, text='Текст')
@@ -100,6 +105,7 @@ txt11 = Text(tab3, font=("Times New Romane", 14))
 txt11.place(x = 10, y = 10, width=675, height=400)
 txt11.focus_set()
 
-
+btn2 = Button(tab3, text="Файл", font=("Times New Romane", 14), command=clicked)
+btn2.place(x=325, y = 420, width=50, height=40)
 
 window.mainloop()
