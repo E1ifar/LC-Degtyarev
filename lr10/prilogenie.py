@@ -33,7 +33,6 @@ def vichisleniya():
         l=b/c
         lbl.configure(text=l)
 
-
 txt1 = Entry(tab1, justify=CENTER,  font=("Times New Romane", 30))
 txt1.place(x = 10, y = 10, width=100, height=50,)
 
@@ -50,11 +49,10 @@ btn1.place(x=290, y = 15, width=50, height=40)
 lbl = Label(tab1, text="", font=("Times New Romane", 30))
 lbl.place(x=350, y = 10, width=100, height=50 )
 
-
 #вторая вкладка
 
 tab2 = ttk.Frame(tab_control)
-tab_control.add(tab2, text='Вторая')
+tab_control.add(tab2, text='Флажки')
 
 def clicked():
     a=chk_state1.get()
@@ -67,7 +65,7 @@ def clicked():
     if c == True:
         mb.showinfo('Информация', 'Вы выбрали третий вариант ответа!')
     if a != True and b != True and c!= True:
-        mb.showwarning('Предупреждение', ' Вы не выбрали ни один вариант ответа!!!')   
+        mb.showwarning('Предупреждение', ' Вы не выбрали ни один вариант ответа!!!')
 
 chk_state1 = BooleanVar()
 chk_state1.set(0) 
@@ -88,9 +86,20 @@ btn = Button(tab2, text="Сохранить выбор", command=clicked)
 btn.grid(column=5, row=0)
 
 #третья вкладка
+def clicked():
+    with open('lr10\текст.txt', 'r') as file: #получение данных из файла
+    for mas in file.readlines():
+        print (mas)
+    mas1 = list(map(int, mas1))
 
 tab3 = ttk.Frame(tab_control)
-tab_control.add(tab3, text='Третья')
+tab_control.add(tab3, text='Текст')
 tab_control.pack(expand=1, fill='both')
+
+txt11 = Text(tab3, font=("Times New Romane", 14))
+txt11.place(x = 10, y = 10, width=675, height=400)
+txt11.focus_set()
+
+
 
 window.mainloop()
