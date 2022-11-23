@@ -94,7 +94,6 @@ def clicked():
     if filepath != "":
         with open(filepath, "r", encoding="UTF-8") as file:
             text =file.read()
-            txt11.delete("1.0", END)
             txt11.insert("1.0", text)
 
 tab3 = ttk.Frame(tab_control)
