@@ -4,6 +4,7 @@ from tkinter.ttk import Checkbutton
 import tkinter.messagebox as mb
 from tkinter.ttk import Combobox
 from tkinter import filedialog
+from tkinter import Menu
 
 window = Tk()
 window.title("Дегтярев Антон Николаевич Уб-21")
@@ -104,7 +105,12 @@ txt11 = Text(tab3, font=("Times New Romane", 14))
 txt11.place(x = 10, y = 10, width=675, height=400)
 txt11.focus_set()
 
-btn2 = Button(tab3, text="Файл", font=("Times New Romane", 14), command=clicked)
-btn2.place(x=325, y = 420, width=50, height=40)
+maimenu = Menu(window)
+
+filemenu = Menu(maimenu, tearoff=0)
+filemenu.add_command(label="Открыть...", command=clicked)
+
+maimenu.add_cascade(label="Файл", menu=filemenu)
+window.config(menu=maimenu) 
 
 window.mainloop()
