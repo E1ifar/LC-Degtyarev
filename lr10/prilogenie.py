@@ -8,14 +8,14 @@ from tkinter import Menu
 
 window = Tk()
 window.title("Дегтярев Антон Николаевич Уб-21")
-window.geometry('700x500') 
-
-tab_control = ttk.Notebook(window)
+window.geometry('1000x500') 
 
 #первая вкладка
 
-tab1 = ttk.Frame(tab_control)
-tab_control.add(tab1, text='Калькулятор')
+tab1_control = ttk.Notebook(window)
+tab1 = ttk.Frame(tab1_control)
+tab1_control.add(tab1, text='Калькулятор')
+tab1_control.place(x=0, y=0, width=450, height=250)
 
 def vichisleniya():
     a=combo.get()
@@ -55,8 +55,10 @@ lbl.place(x=350, y = 10, width=100, height=50 )
 
 #вторая вкладка
 
-tab2 = ttk.Frame(tab_control)
-tab_control.add(tab2, text='Флажки')
+tab2_control = ttk.Notebook(window)
+tab2 = ttk.Frame(tab2_control)
+tab2_control.add(tab2, text='Флажки')
+tab2_control.place(x=0, y=250, width=450, height=250)
 
 def clicked():
     a=chk_state1.get()
@@ -97,12 +99,13 @@ def clicked():
             text =file.read()
             txt11.insert("1.0", text)
 
-tab3 = ttk.Frame(tab_control)
-tab_control.add(tab3, text='Текст')
-tab_control.pack(expand=1, fill='both')
+tab3_control = ttk.Notebook(window)
+tab3 = ttk.Frame(tab3_control)
+tab3_control.add(tab3, text='Текст')
+tab3_control.place(x=475, y=0, width=500, height=500)
 
 txt11 = Text(tab3, font=("Times New Romane", 14))
-txt11.place(x = 10, y = 10, width=675, height=400)
+txt11.place(x = 10, y = 10, width=480, height=450)
 txt11.focus_set()
 
 maimenu = Menu(window)
